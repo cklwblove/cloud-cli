@@ -1,0 +1,25 @@
+{
+  "name": "cloud-cli",
+  "version": "0.0.1",
+  "description": "快速开发基于vue和angular为模板的cli工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cklwblove/cloud-cli.git"
+  },
+  "keywords": [
+    "vue",
+    "angular",
+    "cli",
+    "spa"
+  ],
+  "author": "liwb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cklwblove/cloud-cli/issues"
+  },
+  "homepage": "https://github.com/cklwblove/cloud-cli#readme"
+}
