@@ -120,7 +120,7 @@ function run () {
             downloadAndGenerate(officialTemplate)
           } else {
             if (template.indexOf('-2.0') !== -1) {
-              warnings.v2SuffixTemplatesDeprecated(template, inPlace ? '' : name)
+             warnings.v2SuffixTemplatesDeprecated(template, inPlace ? '' : name)
               return
             }
 

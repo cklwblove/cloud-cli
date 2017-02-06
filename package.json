@@ -1,6 +1,6 @@
 {
   "name": "cloud-cli",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "快速开发基于vue和angular为模板的cli工具",
   "bin": {
     "cloud": "bin/cloud",
@@ -38,6 +38,7 @@
     "handlebars": "^4.0.6",
     "inquirer": "^3.0.1",
     "metalsmith": "^2.3.0",
+    "minimatch": "^3.0.3",
     "multimatch": "^2.1.0",
     "opn": "^4.0.2",
     "ora": "^1.1.0",
@@ -51,6 +52,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "cross-env": "^1.0.7",
+    "execa": "^0.6.0",
     "mocha": "^2.4.5"
   },
   "engines": {
