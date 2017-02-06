@@ -98,12 +98,24 @@ if (exists(to)) {
 function run () {
 
   // check if template is local
-  checkVersion(function () {
+    if (/^[./]|(\w:)/.test(template)) {
+      var templatePath = template.charAt(0) === '/' || /^\w:/.test(template)
+        ? template
+        : path.normalize(path.join(process.cwd(), template))
+      if (exists(templatePath)) {
+        generate(name, templatePath, to, function (err) {
+          if (err) logger.fatal(err)
+          console.log()
+          logger.success('Generated "%s".', name)
+        })
+      } else {
+        logger.fatal('Local template "%s" not found.', template)
+      }
+    } else {
+      checkVersion(function () {
         if (!hasSlash) {
-
           // use official templates
           var officialTemplate = 'cloud-templates/' + template
-
           if (template.indexOf('#') !== -1) {
             downloadAndGenerate(officialTemplate)
           } else {
@@ -119,6 +131,7 @@ function run () {
           downloadAndGenerate(template)
         }
       })
+    }
 }
 
 /**
@@ -131,11 +144,12 @@ function downloadAndGenerate (template) {
   var spinner = ora('downloading template')
   spinner.start()
   download(template, tmp, { clone: clone }, function (err) {
-   console.log('template' + template);
-   console.log('tmp' + tmp);
     spinner.stop()
     if (err) logger.fatal('Failed to download repo ' + template + ': ' + err.message.trim())
-    console.log();
-    logger.success('Generated success.')
+    generate(name, tmp, to, function (err) {
+      if (err) logger.fatal(err)
+      console.log()
+      logger.success('Generated "%s".', name)
+    })
   })
 }
