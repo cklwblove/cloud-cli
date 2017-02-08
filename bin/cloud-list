@@ -10,7 +10,7 @@ var chalk = require('chalk')
 
 console.log()
 process.on('exit', function () {
-    console.log()
+  console.log()
 })
 
 /**
@@ -18,23 +18,23 @@ process.on('exit', function () {
  */
 
 request({
-    url: 'https://api.github.com/users/cloud-templates/repos',
-    headers: {
-        'User-Agent': 'cloud-cli'
-    }
+  url: 'https://api.github.com/users/cloud-templates/repos',
+  headers: {
+    'User-Agent': 'cloud-cli'
+  }
 }, function (err, res, body) {
-    if (err) logger.fatal(err)
-    var requestBody = JSON.parse(body)
-    if (Array.isArray(requestBody)) {
-        console.log('  Available official templates:')
-        console.log()
-        requestBody.forEach(function (repo) {
-            console.log(
-                '  ' + chalk.yellow('★') +
-                '  ' + chalk.blue(repo.name) +
-                ' - ' + repo.description)
-        })
-    } else {
-        console.error(requestBody.message)
-    }
+  if (err) logger.fatal(err)
+  var requestBody = JSON.parse(body)
+  if (Array.isArray(requestBody)) {
+    console.log('  Available official templates:')
+    console.log()
+    requestBody.forEach(function (repo) {
+      console.log(
+        '  ' + chalk.yellow('★') +
+        '  ' + chalk.blue(repo.name) +
+        ' - ' + repo.description)
+    })
+  } else {
+    console.error(requestBody.message)
+  }
 })

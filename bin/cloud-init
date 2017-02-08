@@ -15,7 +15,7 @@ var checkVersion = require('../lib/check-version')
 var warnings = require('../lib/warnings')
 
 /**
- * Usage. 用法格式
+ * Usage.
  */
 
 program
@@ -24,7 +24,7 @@ program
   .option('--offline', 'use cached template')
 
 /**
- * Help.  显示帮助信息
+ * Help.
  */
 
 program.on('--help', function () {
@@ -96,42 +96,31 @@ if (exists(to)) {
  */
 
 function run () {
-
   // check if template is local
-    if (/^[./]|(\w:)/.test(template)) {
-      var templatePath = template.charAt(0) === '/' || /^\w:/.test(template)
-        ? template
-        : path.normalize(path.join(process.cwd(), template))
-      if (exists(templatePath)) {
-        generate(name, templatePath, to, function (err) {
-          if (err) logger.fatal(err)
-          console.log()
-          logger.success('Generated "%s".', name)
-        })
-      } else {
-        logger.fatal('Local template "%s" not found.', template)
-      }
-    } else {
-      checkVersion(function () {
-        if (!hasSlash) {
-          // use official templates
-          var officialTemplate = 'cloud-templates/' + template
-          if (template.indexOf('#') !== -1) {
-            downloadAndGenerate(officialTemplate)
-          } else {
-            if (template.indexOf('-2.0') !== -1) {
-             warnings.v2SuffixTemplatesDeprecated(template, inPlace ? '' : name)
-              return
-            }
-
-            warnings.v2BranchIsNowDefault(template, inPlace ? '' : name)
-            downloadAndGenerate(officialTemplate)
-          }
-        } else {
-          downloadAndGenerate(template)
-        }
+  if (/^[./]|(\w:)/.test(template)) {
+    var templatePath = template.charAt(0) === '/' || /^\w:/.test(template)
+      ? template
+      : path.normalize(path.join(process.cwd(), template))
+    if (exists(templatePath)) {
+      generate(name, templatePath, to, function (err) {
+        if (err) logger.fatal(err)
+        console.log()
+        logger.success('Generated "%s".', name)
       })
+    } else {
+      logger.fatal('Local template "%s" not found.', template)
     }
+  } else {
+    checkVersion(function () {
+      if (!hasSlash) {
+        // use official templates
+        var officialTemplate = 'cloud-templates/' + template
+        downloadAndGenerate(officialTemplate)
+      } else {
+        downloadAndGenerate(template)
+      }
+    })
+  }
 }
 
 /**
