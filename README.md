@@ -1,4 +1,4 @@
-## Cloud CLI
+## Cloud CLI [![Build Status](https://travis-ci.org/cklwblove/cloud-cli.svg?branch=master)](https://travis-ci.org/cklwblove/cloud-cli)
 
 A simple CLI for scaffolding Cloud Broker front-end project.
 
