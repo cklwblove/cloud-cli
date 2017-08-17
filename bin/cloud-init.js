@@ -30,11 +30,13 @@ program
 program.on('--help', function () {
   console.log('  Examples:')
   console.log()
-  console.log(chalk.gray('    # create a new project with an vue template. for the mobile terminal project'))
+  console.log(chalk.gray('    # create a new project with a vue template. for the mobile terminal project'))
   console.log('    $ cloud init vue-template my-project')
   console.log()
   console.log(chalk.gray('    #create a new project with an angular template. for the pc terminal project'))
   console.log('    $ cloud init ng-template my-project')
+  console.log(chalk.gray('    #create a new project with a jQuery template. for the pc terminal project'))
+  console.log('    $ cloud init jQuery-template my-project')
   console.log()
 })
 
