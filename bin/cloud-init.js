@@ -35,6 +35,7 @@ program.on('--help', function () {
   console.log()
   console.log(chalk.gray('    #create a new project with an angular template. for the pc terminal project'))
   console.log('    $ cloud init ng-template my-project')
+  console.log()
   console.log(chalk.gray('    #create a new project with a jQuery template. for the pc terminal project'))
   console.log('    $ cloud init jQuery-template my-project')
   console.log()

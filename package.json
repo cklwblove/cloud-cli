@@ -1,6 +1,6 @@
 {
   "name": "cloud-cli",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "快速开发基于vue和angular及jQuery为模板的cli工具",
   "bin": {
     "cloud": "bin/cloud.js",
