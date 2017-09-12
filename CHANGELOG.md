@@ -1,5 +1,13 @@
 # cloud-cli Change Log
 
+## 1.1.7
+
+`2017-09-12`
+
+- `New` 新增`vue-plugin-template`vue插件模板。
+
+
+
 ## 1.1.6
 
 `2017-08-24`

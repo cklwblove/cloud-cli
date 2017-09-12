@@ -39,6 +39,9 @@ program.on('--help', function () {
   console.log(chalk.gray('    #create a new project with a jQuery template. for the pc terminal project'))
   console.log('    $ cloud init jQuery-template my-project')
   console.log()
+  console.log(chalk.gray('    #create a new plugin with vuejs.'))
+  console.log('    $ cloud init vue-plugin-template vue-plugin-demo')
+  console.log()
 })
 
 /**

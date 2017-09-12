@@ -1,7 +1,7 @@
 {
   "name": "cloud-cli",
-  "version": "1.1.6",
-  "description": "快速开发基于vue和angular及jQuery为模板的cli工具",
+  "version": "1.1.7",
+  "description": "快速开发基于vue和angular、jQuery为模板的cli工具",
   "bin": {
     "cloud": "bin/cloud.js",
     "cloud-init": "bin/cloud-init.js",
@@ -21,6 +21,8 @@
     "jQuery",
     "bootstrap",
     "cli",
+    "plugin",
+    "template",
     "multipage",
     "spa"
   ],
