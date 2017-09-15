@@ -26,6 +26,8 @@ $ cloud init vue-template my-project
 $ cloud init ng-template my-project
 
 $ cloud init jQuery-template my-project
+
+$ cloud init vue-plugin-template my-vue-plugin
 ```
 
 The above command pulls the template from [cloud-templates](https://github.com/cloud-templates), prompts for some information, and generates the project at `./my-project/`.
@@ -41,6 +43,8 @@ The above command pulls the template from [cloud-templates](https://github.com/c
  - [ng-template](https://github.com/cloud-templates/ng-template) - For the pc terminal project.
  
   - [jQuery-template](https://github.com/cloud-templates/jQuery-template) - For the pc terminal project.This is a multipage seed for web application built by jQuery,bootstrap and webpack.
+
+  - [vue-plugin-template](https://github.com/cloud-templates/vue-plugin-template) - A plugin with Vuejs.
 
  
 ### License
